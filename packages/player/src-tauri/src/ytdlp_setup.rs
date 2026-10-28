@@ -79,6 +79,10 @@ fn release_filename() -> &'static str {
     {
         "yt-dlp_win_arm64.zip"
     }
+    #[cfg(mobile)]
+    {
+        ""
+    }
 }
 
 fn binary_name() -> &'static str {
@@ -101,6 +105,10 @@ fn binary_name() -> &'static str {
     #[cfg(all(target_os = "windows", target_arch = "aarch64"))]
     {
         "yt-dlp_win_arm64.exe"
+    }
+    #[cfg(mobile)]
+    {
+        "yt-dlp"
     }
 }
 
@@ -426,6 +434,15 @@ async fn record_installed_tag(ytdlp_dir: &Path) {
     write_update_check(ytdlp_dir, &UpdateCheck::now(tag));
 }
 
+#[cfg(mobile)]
+const UNSUPPORTED_ON_MOBILE: &str = "yt-dlp is not available on mobile";
+
+#[cfg(mobile)]
+pub async fn ensure_binary(_app_handle: &AppHandle) -> Result<PathBuf, String> {
+    Err(UNSUPPORTED_ON_MOBILE.into())
+}
+
+#[cfg(desktop)]
 pub async fn ensure_binary(app_handle: &AppHandle) -> Result<PathBuf, String> {
     let ytdlp_dir = ytdlp_dir(app_handle)?;
     let binary_path = ytdlp_dir.join(binary_name());
@@ -442,6 +459,14 @@ pub async fn ensure_binary(app_handle: &AppHandle) -> Result<PathBuf, String> {
     Ok(binary_path)
 }
 
+#[cfg(mobile)]
+#[command]
+#[specta::specta]
+pub async fn ytdlp_ensure_installed(_app_handle: AppHandle) -> Result<bool, String> {
+    Err(UNSUPPORTED_ON_MOBILE.into())
+}
+
+#[cfg(desktop)]
 #[command]
 #[specta::specta]
 pub async fn ytdlp_ensure_installed(app_handle: AppHandle) -> Result<bool, String> {

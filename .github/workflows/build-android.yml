@@ -1,0 +1,117 @@
+name: Build Android APK
+
+on:
+  push:
+    branches: [master, main]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  DO_NOT_TRACK: 1
+  NDK_VERSION: "28.2.13676358"
+
+jobs:
+  android:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install Android NDK
+        run: |
+          sdkmanager --install "ndk;${NDK_VERSION}" "platforms;android-36" "build-tools;36.0.0"
+          echo "NDK_HOME=${ANDROID_HOME}/ndk/${NDK_VERSION}" >> "$GITHUB_ENV"
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v4
+
+      - name: Get PNPM store directory
+        run: echo "STORE_PATH=$(pnpm store path --silent)" >> "$GITHUB_ENV"
+
+      - name: Setup PNPM cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-linux-android
+
+      - name: Cache cargo dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            packages/player/src-tauri/target/
+          key: ${{ runner.os }}-android-cargo-${{ hashFiles('**/Cargo.lock') }}
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Initialise Tauri Android project
+        working-directory: packages/player
+        run: pnpm tauri android init --ci
+
+      - name: Build APK
+        working-directory: packages/player
+        run: pnpm tauri android build --apk --target aarch64 --ci
+
+      - name: Sign APK
+        env:
+          ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+        run: |
+          UNSIGNED=$(find packages/player/src-tauri/gen/android/app/build/outputs/apk -name '*-unsigned.apk' | head -n 1)
+          if [ -z "$UNSIGNED" ]; then
+            echo "No unsigned APK found"
+            find packages/player/src-tauri/gen/android/app/build/outputs -name '*.apk'
+            exit 1
+          fi
+
+          if [ -n "$ANDROID_KEYSTORE_BASE64" ]; then
+            echo "$ANDROID_KEYSTORE_BASE64" | base64 --decode > release.keystore
+            KEYSTORE_PASSWORD="$ANDROID_KEYSTORE_PASSWORD"
+          else
+            echo "::warning::No ANDROID_KEYSTORE_BASE64 secret set; signing with a throwaway key. Uninstall the previous build before installing this one."
+            KEYSTORE_PASSWORD=$(openssl rand -hex 16)
+            keytool -genkeypair -keystore release.keystore -storepass "$KEYSTORE_PASSWORD" \
+              -alias nuclear -keyalg RSA -keysize 2048 -validity 10000 \
+              -dname "CN=Nuclear Android Build"
+          fi
+
+          BUILD_TOOLS="${ANDROID_HOME}/build-tools/36.0.0"
+          "$BUILD_TOOLS/zipalign" -f -p 4 "$UNSIGNED" aligned.apk
+          "$BUILD_TOOLS/apksigner" sign --ks release.keystore --ks-pass "pass:$KEYSTORE_PASSWORD" \
+            --out nuclear-android-arm64.apk aligned.apk
+          rm -f release.keystore aligned.apk
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: nuclear-android-arm64
+          if-no-files-found: error
+          path: nuclear-android-arm64.apk

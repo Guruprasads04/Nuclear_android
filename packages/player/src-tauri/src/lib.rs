@@ -90,7 +90,7 @@ pub fn run() {
 
     let specta_builder = specta_builder();
 
-    #[cfg(debug_assertions)]
+    #[cfg(all(debug_assertions, desktop))]
     specta_builder
         .export(
             typescript_export_config(),
@@ -108,16 +108,21 @@ pub fn run() {
         .plugin(tauri_plugin_fs::init())
         .plugin(tauri_plugin_store::Builder::new().build())
         .plugin(tauri_plugin_upload::init())
-        .plugin(
+        .plugin(setup::log_plugin());
+
+    #[cfg(desktop)]
+    {
+        builder = builder.plugin(
             tauri_plugin_window_state::Builder::default()
                 .with_state_flags(
                     tauri_plugin_window_state::StateFlags::all()
                         .difference(tauri_plugin_window_state::StateFlags::VISIBLE),
                 )
                 .build(),
-        )
-        .plugin(setup::log_plugin());
+        );
+    }
 
+    #[cfg(desktop)]
     if !is_flatpak {
         builder = builder
             .plugin(tauri_plugin_updater::Builder::new().build())
