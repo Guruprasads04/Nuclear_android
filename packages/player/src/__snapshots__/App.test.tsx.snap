@@ -12,7 +12,7 @@ exports[`App > should render snapshot 1`] = `
     />
     <div>
       <header
-        class="surface-topbar border-border grid h-12 grid-cols-[1fr_4fr_1fr] items-center gap-2 border-b-(length:--border-width) px-3 select-none"
+        class="surface-topbar border-border grid h-12 grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-2 border-b-(length:--border-width) px-3 select-none md:grid-cols-[1fr_4fr_1fr]"
         data-tauri-drag-region="true"
       >
         <div
@@ -203,7 +203,7 @@ exports[`App > should render snapshot 1`] = `
       </header>
     </div>
     <div
-      class="surface-muted relative grid h-full min-h-0 grid-cols-[auto_1fr_auto]"
+      class="surface-muted relative grid h-full min-h-0 grid-cols-1 md:grid-cols-[auto_1fr_auto]"
     >
       <div
         animate="[object Object]"
@@ -912,10 +912,10 @@ exports[`App > should render snapshot 1`] = `
       </div>
     </div>
     <footer
-      class="surface-bottombar border-border flex h-16 items-center border-t-(length:--border-width) px-4"
+      class="surface-bottombar border-border flex h-16 items-center border-t-(length:--border-width) px-2 md:px-4"
     >
       <div
-        class="grid w-full grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-4"
+        class="grid w-full grid-cols-[minmax(0,1fr)_auto] items-center gap-2 md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] md:gap-4"
       >
         <div
           class="min-w-0"
@@ -976,7 +976,9 @@ exports[`App > should render snapshot 1`] = `
           <div
             class="flex items-center justify-center gap-2"
           >
-            <div>
+            <div
+              class="hidden md:block"
+            >
               <button
                 class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 size-10 justify-center"
                 data-headlessui-state=""
@@ -1091,7 +1093,9 @@ exports[`App > should render snapshot 1`] = `
                 />
               </svg>
             </button>
-            <div>
+            <div
+              class="hidden md:block"
+            >
               <button
                 class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 size-10 justify-center"
                 data-headlessui-state=""
@@ -1129,7 +1133,7 @@ exports[`App > should render snapshot 1`] = `
           </div>
         </div>
         <div
-          class="justify-self-end"
+          class="hidden justify-self-end md:block"
         >
           <div
             class="flex items-center gap-2"

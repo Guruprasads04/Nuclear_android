@@ -38,7 +38,7 @@ const buildEntry = (target: Element, inlineSize: number, blockSize: number) => {
 };
 
 const setupMatchMediaMock = () => {
-  window.matchMedia = vi.fn().mockImplementation((query: string) => ({
+  window.matchMedia = vi.fn((query: string) => ({
     matches: false,
     media: query,
     onchange: null,

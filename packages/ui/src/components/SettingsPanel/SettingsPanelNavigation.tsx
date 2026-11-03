@@ -13,7 +13,7 @@ export const SettingsPanelNavigation: FC<SettingsPanelNavigationProps> = ({
   sections,
   footer,
 }) => (
-  <nav className="border-border flex w-56 shrink-0 flex-col border-r-(length:--border-width)">
+  <nav className="border-border flex max-h-[40%] w-full shrink-0 flex-col border-b-(length:--border-width) md:max-h-none md:w-56 md:border-r-(length:--border-width) md:border-b-0">
     <ScrollableArea viewportClassName="gap-4 p-4">
       {sections.map((section) => (
         <SettingsPanelNavigationSection key={section.id} section={section} />

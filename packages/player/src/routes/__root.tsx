@@ -1,4 +1,4 @@
-import { createRootRoute } from '@tanstack/react-router';
+import { createRootRoute, useRouterState } from '@tanstack/react-router';
 import { getCurrentWindow } from '@tauri-apps/api/window';
 import {
   CableIcon,
@@ -21,6 +21,7 @@ import {
   SidebarNavigation,
   SidebarNavigationItem,
   Toaster,
+  useIsMobile,
 } from '@nuclearplayer/ui';
 
 import { ConnectedPlayerBar } from '../components/ConnectedPlayerBar';
@@ -38,6 +39,7 @@ import { SoundProvider } from '../components/SoundProvider';
 import { StreamResolver } from '../components/StreamResolver';
 import { GlobalShortcuts } from '../shortcuts';
 import { useLayoutStore } from '../stores/layoutStore';
+import { useMobileDrawerStore } from '../stores/mobileDrawerStore';
 import { useSettingsModalStore } from '../stores/settingsModalStore';
 import { useStartupStore } from '../stores/startupStore';
 
@@ -54,10 +56,35 @@ const RootComponent = () => {
   } = useLayoutStore();
   const openSettings = useSettingsModalStore((state) => state.open);
   const isStartingUp = useStartupStore((state) => state.isStartingUp);
+  const isMobile = useIsMobile();
+  const {
+    openDrawer,
+    toggle: toggleDrawer,
+    close: closeDrawer,
+  } = useMobileDrawerStore();
+  const pathname = useRouterState({
+    select: (state) => state.location.pathname,
+  });
   useEffect(() => {
     const window = getCurrentWindow();
     window.show().then(() => window.setFocus());
   }, []);
+  useEffect(() => {
+    closeDrawer();
+  }, [pathname, isMobile, closeDrawer]);
+
+  const isLeftCollapsed = isMobile
+    ? openDrawer !== 'navigation'
+    : leftSidebar.isCollapsed;
+  const isRightCollapsed = isMobile
+    ? openDrawer !== 'queue'
+    : rightSidebar.isCollapsed;
+  const onToggleLeft = isMobile
+    ? () => toggleDrawer('navigation')
+    : toggleLeftSidebar;
+  const onToggleRight = isMobile
+    ? () => toggleDrawer('queue')
+    : toggleRightSidebar;
   return (
     <PlayerShell onContextMenu={(e) => e.preventDefault()}>
       <GlobalShortcuts />
@@ -71,11 +98,11 @@ const RootComponent = () => {
         <PlayerWorkspace>
           <PlayerWorkspace.LeftSidebar
             width={leftSidebar.width}
-            isCollapsed={leftSidebar.isCollapsed}
+            isCollapsed={isLeftCollapsed}
             onWidthChange={setLeftSidebarWidth}
-            onToggle={toggleLeftSidebar}
+            onToggle={onToggleLeft}
           >
-            <SidebarNavigation isCompact={leftSidebar.isCollapsed}>
+            <SidebarNavigation isCompact={isLeftCollapsed}>
               <div className="flex flex-1 flex-col gap-2 overflow-y-auto">
                 <SidebarNavigationItem
                   to="/dashboard"
@@ -121,7 +148,10 @@ const RootComponent = () => {
               <SidebarNavigationItem
                 icon={<SettingsIcon />}
                 label={tPrefs('title')}
-                onClick={() => openSettings()}
+                onClick={() => {
+                  closeDrawer();
+                  openSettings();
+                }}
               />
             </SidebarNavigation>
           </PlayerWorkspace.LeftSidebar>
@@ -132,13 +162,13 @@ const RootComponent = () => {
 
           <PlayerWorkspace.RightSidebar
             width={rightSidebar.width}
-            isCollapsed={rightSidebar.isCollapsed}
+            isCollapsed={isRightCollapsed}
             onWidthChange={setRightSidebarWidth}
-            onToggle={toggleRightSidebar}
+            onToggle={onToggleRight}
             headerActions={<QueueHeaderActions />}
             footer={<ConnectedStreamVerification />}
           >
-            <ConnectedQueuePanel isCollapsed={rightSidebar.isCollapsed} />
+            <ConnectedQueuePanel isCollapsed={isRightCollapsed} />
           </PlayerWorkspace.RightSidebar>
         </PlayerWorkspace>
       </SoundProvider>

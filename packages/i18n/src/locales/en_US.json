@@ -35,7 +35,9 @@
     "playlists": "Playlists",
     "history": "History",
     "lyrics": "Lyrics",
-    "sources": "Sources"
+    "sources": "Sources",
+    "openMenu": "Open menu",
+    "openQueue": "Open queue"
   },
   "history": {
     "title": "History",

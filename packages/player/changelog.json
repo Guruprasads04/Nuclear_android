@@ -1,5 +1,17 @@
 [
   {
+    "date": "2026-11-03T00:00",
+    "description": "Nuclear adapts to phone-sized screens: the navigation and queue open as slide-over drawers, and the top bar, player bar and preferences fit narrow screens.",
+    "type": "feature",
+    "contributors": ["Guruprasads04"],
+    "tags": [
+      {
+        "label": "Mobile",
+        "color": "cyan"
+      }
+    ]
+  },
+  {
     "date": "2026-10-26T00:00",
     "description": "Security updates for TLS certificate validation (distrusted eMudhra certificates), the auto-updater and the MCP server.",
     "type": "fix",
