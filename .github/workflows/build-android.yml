@@ -15,39 +15,46 @@ env:
 
 jobs:
   android:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Setup Java
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: "17"
 
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
-
-      - name: Install Android NDK
+      - name: Install Android SDK and NDK
         run: |
-          sdkmanager --install "ndk;${NDK_VERSION}" "platforms;android-36" "build-tools;36.0.0"
-          echo "NDK_HOME=${ANDROID_HOME}/ndk/${NDK_VERSION}" >> "$GITHUB_ENV"
+          SDK_DIR="$HOME/android-sdk"
+          mkdir -p "$SDK_DIR/cmdline-tools"
+          curl -fsSL -o /tmp/cmdline-tools.zip https://dl.google.com/android/repository/commandlinetools-linux-13114758_latest.zip
+          unzip -q /tmp/cmdline-tools.zip -d "$SDK_DIR/cmdline-tools"
+          mv "$SDK_DIR/cmdline-tools/cmdline-tools" "$SDK_DIR/cmdline-tools/latest"
+          SDKMANAGER="$SDK_DIR/cmdline-tools/latest/bin/sdkmanager"
+          (yes || true) | "$SDKMANAGER" --sdk_root="$SDK_DIR" --licenses > /dev/null
+          "$SDKMANAGER" --sdk_root="$SDK_DIR" --install "platform-tools" "platforms;android-36" "build-tools;36.0.0" "ndk;${NDK_VERSION}" > /dev/null
+          test -d "$SDK_DIR/ndk/${NDK_VERSION}"
+          echo "ANDROID_HOME=$SDK_DIR" >> "$GITHUB_ENV"
+          echo "ANDROID_SDK_ROOT=$SDK_DIR" >> "$GITHUB_ENV"
+          echo "NDK_HOME=$SDK_DIR/ndk/${NDK_VERSION}" >> "$GITHUB_ENV"
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: "24"
 
       - name: Setup PNPM
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v6
 
       - name: Get PNPM store directory
         run: echo "STORE_PATH=$(pnpm store path --silent)" >> "$GITHUB_ENV"
 
       - name: Setup PNPM cache
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ${{ env.STORE_PATH }}
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
@@ -60,7 +67,7 @@ jobs:
           targets: aarch64-linux-android
 
       - name: Cache cargo dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: |
             ~/.cargo/registry/index/
@@ -110,7 +117,7 @@ jobs:
           rm -f release.keystore aligned.apk
 
       - name: Upload APK
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: nuclear-android-arm64
           if-no-files-found: error
