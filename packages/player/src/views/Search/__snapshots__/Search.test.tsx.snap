@@ -12,7 +12,7 @@ exports[`Search view > (Snapshot) renders the search view 1`] = `
     />
     <div>
       <header
-        class="surface-topbar border-border grid h-12 grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-2 border-b-(length:--border-width) px-3 select-none md:grid-cols-[1fr_4fr_1fr]"
+        class="surface-topbar border-border grid h-12 grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-2 border-b-(length:--border-width) px-3 select-none max-md:h-16 md:grid-cols-[1fr_4fr_1fr]"
         data-tauri-drag-region="true"
       >
         <div
@@ -48,7 +48,7 @@ exports[`Search view > (Snapshot) renders the search view 1`] = `
             class="flex flex-row items-center gap-2"
           >
             <button
-              class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-primary border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none size-8 justify-center"
+              class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-primary border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none size-8 justify-center max-md:size-11 max-md:[&_svg]:size-5"
               data-headlessui-state=""
               type="button"
             >
@@ -71,7 +71,7 @@ exports[`Search view > (Snapshot) renders the search view 1`] = `
               </svg>
             </button>
             <button
-              class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-primary border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none size-8 justify-center"
+              class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-primary border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none size-8 justify-center max-md:size-11 max-md:[&_svg]:size-5"
               data-disabled=""
               data-headlessui-state="disabled"
               disabled=""
@@ -102,7 +102,7 @@ exports[`Search view > (Snapshot) renders the search view 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="lucide lucide-search text-muted-foreground pointer-events-none absolute top-1/2 left-2.5 size-4 -translate-y-1/2"
+            class="lucide lucide-search text-muted-foreground pointer-events-none absolute top-1/2 left-2.5 size-4 -translate-y-1/2 max-md:left-3 max-md:size-5"
             fill="none"
             height="24"
             stroke="currentColor"
@@ -126,7 +126,7 @@ exports[`Search view > (Snapshot) renders the search view 1`] = `
             class="flex w-full flex-col gap-2"
           >
             <input
-              class="border-border focus-visible:ring-ring focus-visible:ring-offset-muted w-full transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none surface-background text-foreground placeholder:text-foreground/60 rounded-md border-(length:--border-width) h-8 px-8"
+              class="border-border focus-visible:ring-ring focus-visible:ring-offset-muted w-full transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none surface-background text-foreground placeholder:text-foreground/60 rounded-md border-(length:--border-width) h-8 px-8 max-md:h-11 max-md:px-10 max-md:text-base"
               data-headlessui-state="hover"
               data-hover=""
               data-testid="search-box"
@@ -137,14 +137,14 @@ exports[`Search view > (Snapshot) renders the search view 1`] = `
             />
           </div>
           <button
-            class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 absolute top-1/2 right-1 size-6 -translate-y-1/2 justify-center p-0"
+            class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 max-md:text-base absolute top-1/2 right-1 size-6 -translate-y-1/2 justify-center p-0 max-md:size-9"
             data-headlessui-state=""
             data-testid="search-box-clear"
             type="button"
           >
             <svg
               aria-hidden="true"
-              class="lucide lucide-x size-4"
+              class="lucide lucide-x size-4 max-md:size-5"
               fill="none"
               height="24"
               stroke="currentColor"
@@ -241,7 +241,7 @@ exports[`Search view > (Snapshot) renders the search view 1`] = `
           class="mb-4 flex flex-row items-center justify-end px-2 pt-2"
         >
           <button
-            class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-primary border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none size-10 justify-center top-2 px-2 right-1"
+            class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-primary border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none size-10 justify-center max-md:size-12 max-md:[&_svg]:size-6 top-2 px-2 right-1"
             data-headlessui-state=""
             data-testid="sidebar-toggle-left"
             type="button"
@@ -291,7 +291,7 @@ exports[`Search view > (Snapshot) renders the search view 1`] = `
                     data-testid="sidebar-navigation-item"
                   >
                     <div
-                      class="flex size-8 shrink-0 items-center justify-center"
+                      class="flex size-8 shrink-0 items-center justify-center max-md:size-12 max-md:[&_svg]:size-6"
                     >
                       <svg
                         aria-hidden="true"
@@ -315,7 +315,7 @@ exports[`Search view > (Snapshot) renders the search view 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="text-sm whitespace-nowrap transition-opacity duration-150 opacity-100"
+                      class="text-sm whitespace-nowrap transition-opacity duration-150 max-md:text-base opacity-100"
                     >
                       Dashboard
                     </span>
@@ -331,7 +331,7 @@ exports[`Search view > (Snapshot) renders the search view 1`] = `
                     data-testid="sidebar-navigation-item"
                   >
                     <div
-                      class="flex size-8 shrink-0 items-center justify-center"
+                      class="flex size-8 shrink-0 items-center justify-center max-md:size-12 max-md:[&_svg]:size-6"
                     >
                       <svg
                         aria-hidden="true"
@@ -359,7 +359,7 @@ exports[`Search view > (Snapshot) renders the search view 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="text-sm whitespace-nowrap transition-opacity duration-150 opacity-100"
+                      class="text-sm whitespace-nowrap transition-opacity duration-150 max-md:text-base opacity-100"
                     >
                       Favorite albums
                     </span>
@@ -375,7 +375,7 @@ exports[`Search view > (Snapshot) renders the search view 1`] = `
                     data-testid="sidebar-navigation-item"
                   >
                     <div
-                      class="flex size-8 shrink-0 items-center justify-center"
+                      class="flex size-8 shrink-0 items-center justify-center max-md:size-12 max-md:[&_svg]:size-6"
                     >
                       <svg
                         aria-hidden="true"
@@ -406,7 +406,7 @@ exports[`Search view > (Snapshot) renders the search view 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="text-sm whitespace-nowrap transition-opacity duration-150 opacity-100"
+                      class="text-sm whitespace-nowrap transition-opacity duration-150 max-md:text-base opacity-100"
                     >
                       Favorite tracks
                     </span>
@@ -422,7 +422,7 @@ exports[`Search view > (Snapshot) renders the search view 1`] = `
                     data-testid="sidebar-navigation-item"
                   >
                     <div
-                      class="flex size-8 shrink-0 items-center justify-center"
+                      class="flex size-8 shrink-0 items-center justify-center max-md:size-12 max-md:[&_svg]:size-6"
                     >
                       <svg
                         aria-hidden="true"
@@ -448,7 +448,7 @@ exports[`Search view > (Snapshot) renders the search view 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="text-sm whitespace-nowrap transition-opacity duration-150 opacity-100"
+                      class="text-sm whitespace-nowrap transition-opacity duration-150 max-md:text-base opacity-100"
                     >
                       Favorite artists
                     </span>
@@ -464,7 +464,7 @@ exports[`Search view > (Snapshot) renders the search view 1`] = `
                     data-testid="sidebar-navigation-item"
                   >
                     <div
-                      class="flex size-8 shrink-0 items-center justify-center"
+                      class="flex size-8 shrink-0 items-center justify-center max-md:size-12 max-md:[&_svg]:size-6"
                     >
                       <svg
                         aria-hidden="true"
@@ -497,7 +497,7 @@ exports[`Search view > (Snapshot) renders the search view 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="text-sm whitespace-nowrap transition-opacity duration-150 opacity-100"
+                      class="text-sm whitespace-nowrap transition-opacity duration-150 max-md:text-base opacity-100"
                     >
                       Playlists
                     </span>
@@ -513,7 +513,7 @@ exports[`Search view > (Snapshot) renders the search view 1`] = `
                     data-testid="sidebar-navigation-item"
                   >
                     <div
-                      class="flex size-8 shrink-0 items-center justify-center"
+                      class="flex size-8 shrink-0 items-center justify-center max-md:size-12 max-md:[&_svg]:size-6"
                     >
                       <svg
                         aria-hidden="true"
@@ -540,7 +540,7 @@ exports[`Search view > (Snapshot) renders the search view 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="text-sm whitespace-nowrap transition-opacity duration-150 opacity-100"
+                      class="text-sm whitespace-nowrap transition-opacity duration-150 max-md:text-base opacity-100"
                     >
                       History
                     </span>
@@ -556,7 +556,7 @@ exports[`Search view > (Snapshot) renders the search view 1`] = `
                     data-testid="sidebar-navigation-item"
                   >
                     <div
-                      class="flex size-8 shrink-0 items-center justify-center"
+                      class="flex size-8 shrink-0 items-center justify-center max-md:size-12 max-md:[&_svg]:size-6"
                     >
                       <svg
                         aria-hidden="true"
@@ -585,7 +585,7 @@ exports[`Search view > (Snapshot) renders the search view 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="text-sm whitespace-nowrap transition-opacity duration-150 opacity-100"
+                      class="text-sm whitespace-nowrap transition-opacity duration-150 max-md:text-base opacity-100"
                     >
                       Lyrics
                     </span>
@@ -601,7 +601,7 @@ exports[`Search view > (Snapshot) renders the search view 1`] = `
                     data-testid="sidebar-navigation-item"
                   >
                     <div
-                      class="flex size-8 shrink-0 items-center justify-center"
+                      class="flex size-8 shrink-0 items-center justify-center max-md:size-12 max-md:[&_svg]:size-6"
                     >
                       <svg
                         aria-hidden="true"
@@ -640,7 +640,7 @@ exports[`Search view > (Snapshot) renders the search view 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="text-sm whitespace-nowrap transition-opacity duration-150 opacity-100"
+                      class="text-sm whitespace-nowrap transition-opacity duration-150 max-md:text-base opacity-100"
                     >
                       Sources
                     </span>
@@ -655,7 +655,7 @@ exports[`Search view > (Snapshot) renders the search view 1`] = `
                 role="button"
               >
                 <div
-                  class="flex size-8 shrink-0 items-center justify-center"
+                  class="flex size-8 shrink-0 items-center justify-center max-md:size-12 max-md:[&_svg]:size-6"
                 >
                   <svg
                     aria-hidden="true"
@@ -681,7 +681,7 @@ exports[`Search view > (Snapshot) renders the search view 1`] = `
                   </svg>
                 </div>
                 <span
-                  class="text-sm whitespace-nowrap transition-opacity duration-150 opacity-100"
+                  class="text-sm whitespace-nowrap transition-opacity duration-150 max-md:text-base opacity-100"
                 >
                   Preferences
                 </span>
@@ -775,7 +775,7 @@ exports[`Search view > (Snapshot) renders the search view 1`] = `
                     </div>
                     <div>
                       <button
-                        class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-primary border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none h-10 px-4 py-2"
+                        class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-primary border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none h-10 px-4 py-2 max-md:h-12 max-md:text-base"
                         data-headlessui-state=""
                         data-testid="search-empty-state-action"
                         type="button"
@@ -800,7 +800,7 @@ exports[`Search view > (Snapshot) renders the search view 1`] = `
           class="mb-4 flex flex-row items-center justify-start px-2 pt-2"
         >
           <button
-            class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-primary border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none size-10 justify-center top-2 px-2 left-1"
+            class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-primary border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none size-10 justify-center max-md:size-12 max-md:[&_svg]:size-6 top-2 px-2 left-1"
             data-headlessui-state=""
             data-testid="sidebar-toggle-right"
             type="button"
@@ -892,14 +892,14 @@ exports[`Search view > (Snapshot) renders the search view 1`] = `
     >
       <div
         aria-disabled="false"
-        class="relative h-4 w-full cursor-pointer"
+        class="relative h-4 w-full max-md:h-6 cursor-pointer"
         data-testid="player-seek-bar"
       >
         <div
           class="border-border surface-seekbar-track absolute inset-0 border-t-(length:--border-width)"
         >
           <div
-            class="absolute right-0 left-0 z-10 flex h-full flex-row items-center justify-between px-2 pt-0.5 text-xs leading-none"
+            class="absolute right-0 left-0 z-10 flex h-full flex-row items-center justify-between px-2 pt-0.5 text-xs leading-none max-md:text-sm"
           >
             <span
               class="tabular-nums"
@@ -920,7 +920,7 @@ exports[`Search view > (Snapshot) renders the search view 1`] = `
       </div>
     </div>
     <footer
-      class="surface-bottombar border-border flex h-16 items-center border-t-(length:--border-width) px-2 md:px-4"
+      class="surface-bottombar border-border flex h-16 items-center border-t-(length:--border-width) max-md:h-20 px-2 md:px-4"
     >
       <div
         class="grid w-full grid-cols-[minmax(0,1fr)_auto] items-center gap-2 md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] md:gap-4"
@@ -966,13 +966,13 @@ exports[`Search view > (Snapshot) renders the search view 1`] = `
               class="min-w-0 flex-1"
             >
               <div
-                class="truncate text-sm font-bold"
+                class="truncate text-sm font-bold max-md:text-base"
                 data-testid="now-playing-title"
               >
                 No track playing
               </div>
               <div
-                class="truncate text-xs opacity-70"
+                class="truncate text-xs opacity-70 max-md:text-sm"
                 data-testid="player-now-playing-artist"
               />
             </div>
@@ -988,7 +988,7 @@ exports[`Search view > (Snapshot) renders the search view 1`] = `
               class="hidden md:block"
             >
               <button
-                class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 size-10 justify-center"
+                class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 size-10 justify-center max-md:size-12 max-md:[&_svg]:size-6"
                 data-headlessui-state=""
                 data-testid="player-shuffle-button"
                 type="button"
@@ -1025,7 +1025,7 @@ exports[`Search view > (Snapshot) renders the search view 1`] = `
               </button>
             </div>
             <button
-              class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 size-10 justify-center"
+              class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 size-10 justify-center max-md:size-12 max-md:[&_svg]:size-6"
               data-headlessui-state=""
               type="button"
             >
@@ -1051,7 +1051,7 @@ exports[`Search view > (Snapshot) renders the search view 1`] = `
               </svg>
             </button>
             <button
-              class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-primary border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none size-10 justify-center"
+              class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-primary border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none size-10 justify-center max-md:size-12 max-md:[&_svg]:size-6"
               data-headlessui-state=""
               data-testid="player-play-button"
               type="button"
@@ -1075,7 +1075,7 @@ exports[`Search view > (Snapshot) renders the search view 1`] = `
               </svg>
             </button>
             <button
-              class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 size-10 justify-center"
+              class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 size-10 justify-center max-md:size-12 max-md:[&_svg]:size-6"
               data-headlessui-state=""
               data-testid="player-next-button"
               type="button"
@@ -1105,7 +1105,7 @@ exports[`Search view > (Snapshot) renders the search view 1`] = `
               class="hidden md:block"
             >
               <button
-                class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 size-10 justify-center"
+                class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 size-10 justify-center max-md:size-12 max-md:[&_svg]:size-6"
                 data-headlessui-state=""
                 data-testid="player-repeat-button"
                 type="button"
@@ -1147,7 +1147,7 @@ exports[`Search view > (Snapshot) renders the search view 1`] = `
             class="flex items-center gap-2"
           >
             <button
-              class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 size-10 justify-center"
+              class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 size-10 justify-center max-md:size-12 max-md:[&_svg]:size-6"
               data-headlessui-state=""
               type="button"
             >

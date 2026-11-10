@@ -42,7 +42,7 @@ export const PlayerBarNowPlaying: FC<PlayerBarNowPlayingProps> = ({
     </div>
     <div className="min-w-0 flex-1">
       <div
-        className={cn('truncate text-sm font-bold', {
+        className={cn('truncate text-sm font-bold max-md:text-base', {
           'cursor-pointer hover:underline': onTitleClick,
         })}
         data-testid="now-playing-title"
@@ -51,7 +51,7 @@ export const PlayerBarNowPlaying: FC<PlayerBarNowPlayingProps> = ({
         {title}
       </div>
       <div
-        className={cn('truncate text-xs opacity-70', {
+        className={cn('truncate text-xs opacity-70 max-md:text-sm', {
           'cursor-pointer hover:underline': onArtistClick,
         })}
         data-testid="player-now-playing-artist"

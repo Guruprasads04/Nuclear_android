@@ -50,12 +50,12 @@ export const SidebarNavigationItem: FC<SidebarNavigationItemProps> = ({
               },
             )}
           >
-            <div className="flex size-8 shrink-0 items-center justify-center">
+            <div className="flex size-8 shrink-0 items-center justify-center max-md:size-12 max-md:[&_svg]:size-6">
               {icon}
             </div>
             <span
               className={cn(
-                'text-sm whitespace-nowrap transition-opacity duration-150',
+                'text-sm whitespace-nowrap transition-opacity duration-150 max-md:text-base',
                 {
                   'opacity-0': isCompact,
                   'opacity-100': !isCompact,

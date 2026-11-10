@@ -21,12 +21,12 @@ const buttonVariants = cva(
         ghost: 'hover:bg-foreground/10 border border-current',
       },
       size: {
-        default: 'h-10 px-4 py-2',
-        sm: 'h-9 px-3',
-        xs: 'h-8 px-2 text-sm',
-        lg: 'h-11 px-8',
-        icon: 'size-10 justify-center',
-        'icon-sm': 'size-8 justify-center',
+        default: 'h-10 px-4 py-2 max-md:h-12 max-md:text-base',
+        sm: 'h-9 px-3 max-md:h-11',
+        xs: 'h-8 px-2 text-sm max-md:h-10',
+        lg: 'h-11 px-8 max-md:h-12',
+        icon: 'size-10 justify-center max-md:size-12 max-md:[&_svg]:size-6',
+        'icon-sm': 'size-8 justify-center max-md:size-11 max-md:[&_svg]:size-5',
         flexible: 'h-auto',
       },
       intent: {

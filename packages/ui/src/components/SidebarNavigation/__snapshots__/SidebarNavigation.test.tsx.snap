@@ -12,7 +12,7 @@ exports[`SidebarNavigation > (Snapshot) renders flat nav items in compact mode 1
         data-testid="sidebar-navigation-item"
       >
         <div
-          class="flex size-8 shrink-0 items-center justify-center"
+          class="flex size-8 shrink-0 items-center justify-center max-md:size-12 max-md:[&_svg]:size-6"
         >
           <svg
             aria-hidden="true"
@@ -37,7 +37,7 @@ exports[`SidebarNavigation > (Snapshot) renders flat nav items in compact mode 1
           </svg>
         </div>
         <span
-          class="text-sm whitespace-nowrap transition-opacity duration-150 opacity-0"
+          class="text-sm whitespace-nowrap transition-opacity duration-150 max-md:text-base opacity-0"
         >
           Dashboard
         </span>
@@ -49,7 +49,7 @@ exports[`SidebarNavigation > (Snapshot) renders flat nav items in compact mode 1
         data-testid="sidebar-navigation-item"
       >
         <div
-          class="flex size-8 shrink-0 items-center justify-center"
+          class="flex size-8 shrink-0 items-center justify-center max-md:size-12 max-md:[&_svg]:size-6"
         >
           <svg
             aria-hidden="true"
@@ -71,7 +71,7 @@ exports[`SidebarNavigation > (Snapshot) renders flat nav items in compact mode 1
           </svg>
         </div>
         <span
-          class="text-sm whitespace-nowrap transition-opacity duration-150 opacity-0"
+          class="text-sm whitespace-nowrap transition-opacity duration-150 max-md:text-base opacity-0"
         >
           Favorites
         </span>
@@ -93,7 +93,7 @@ exports[`SidebarNavigation > (Snapshot) renders flat nav items in normal mode 1`
         data-testid="sidebar-navigation-item"
       >
         <div
-          class="flex size-8 shrink-0 items-center justify-center"
+          class="flex size-8 shrink-0 items-center justify-center max-md:size-12 max-md:[&_svg]:size-6"
         >
           <svg
             aria-hidden="true"
@@ -118,7 +118,7 @@ exports[`SidebarNavigation > (Snapshot) renders flat nav items in normal mode 1`
           </svg>
         </div>
         <span
-          class="text-sm whitespace-nowrap transition-opacity duration-150 opacity-100"
+          class="text-sm whitespace-nowrap transition-opacity duration-150 max-md:text-base opacity-100"
         >
           Dashboard
         </span>
@@ -130,7 +130,7 @@ exports[`SidebarNavigation > (Snapshot) renders flat nav items in normal mode 1`
         data-testid="sidebar-navigation-item"
       >
         <div
-          class="flex size-8 shrink-0 items-center justify-center"
+          class="flex size-8 shrink-0 items-center justify-center max-md:size-12 max-md:[&_svg]:size-6"
         >
           <svg
             aria-hidden="true"
@@ -152,7 +152,7 @@ exports[`SidebarNavigation > (Snapshot) renders flat nav items in normal mode 1`
           </svg>
         </div>
         <span
-          class="text-sm whitespace-nowrap transition-opacity duration-150 opacity-100"
+          class="text-sm whitespace-nowrap transition-opacity duration-150 max-md:text-base opacity-100"
         >
           Favorites
         </span>

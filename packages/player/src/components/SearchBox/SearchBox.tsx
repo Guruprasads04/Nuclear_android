@@ -23,7 +23,7 @@ export const SearchBox: FC = () => {
 
   return (
     <div className="relative w-full">
-      <Search className="text-muted-foreground pointer-events-none absolute top-1/2 left-2.5 size-4 -translate-y-1/2" />
+      <Search className="text-muted-foreground pointer-events-none absolute top-1/2 left-2.5 size-4 -translate-y-1/2 max-md:left-3 max-md:size-5" />
       <Input
         ref={inputRef}
         data-testid="search-box"
@@ -34,16 +34,16 @@ export const SearchBox: FC = () => {
         onBlur={closePopover}
         placeholder={t('placeholder')}
         tone="secondary"
-        className="h-8 px-8"
+        className="h-8 px-8 max-md:h-11 max-md:px-10 max-md:text-base"
       />
       {query.length > 0 && (
         <Button
           data-testid="search-box-clear"
           variant="text"
           onClick={clear}
-          className="absolute top-1/2 right-1 size-6 -translate-y-1/2 justify-center p-0"
+          className="absolute top-1/2 right-1 size-6 -translate-y-1/2 justify-center p-0 max-md:size-9"
         >
-          <X className="size-4" />
+          <X className="size-4 max-md:size-5" />
         </Button>
       )}
       <SearchBoxPopover

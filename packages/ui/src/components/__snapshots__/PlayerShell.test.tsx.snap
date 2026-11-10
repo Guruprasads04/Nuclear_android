@@ -11,7 +11,7 @@ exports[`PlayerShell > matches snapshot with complete layout 1`] = `
       data-testid="wallpaper-layer"
     />
     <header
-      class="surface-topbar border-border grid h-12 grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-2 border-b-(length:--border-width) px-3 select-none md:grid-cols-[1fr_4fr_1fr]"
+      class="surface-topbar border-border grid h-12 grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-2 border-b-(length:--border-width) px-3 select-none max-md:h-16 md:grid-cols-[1fr_4fr_1fr]"
       data-tauri-drag-region="true"
     />
     <div
@@ -27,7 +27,7 @@ exports[`PlayerShell > matches snapshot with complete layout 1`] = `
           class="mb-4 flex flex-row items-center justify-end px-2 pt-2"
         >
           <button
-            class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-primary border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none size-10 justify-center top-2 px-2 right-1"
+            class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-primary border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none size-10 justify-center max-md:size-12 max-md:[&_svg]:size-6 top-2 px-2 right-1"
             data-headlessui-state=""
             data-testid="sidebar-toggle-left"
             type="button"
@@ -79,7 +79,7 @@ exports[`PlayerShell > matches snapshot with complete layout 1`] = `
           class="mb-4 flex flex-row items-center justify-start px-2 pt-2"
         >
           <button
-            class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-primary border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none size-10 justify-center top-2 px-2 left-1"
+            class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-primary border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none size-10 justify-center max-md:size-12 max-md:[&_svg]:size-6 top-2 px-2 left-1"
             data-headlessui-state=""
             data-testid="sidebar-toggle-right"
             type="button"
@@ -119,7 +119,7 @@ exports[`PlayerShell > matches snapshot with complete layout 1`] = `
       </div>
     </div>
     <footer
-      class="surface-bottombar border-border flex h-16 items-center border-t-(length:--border-width) px-4"
+      class="surface-bottombar border-border flex h-16 items-center border-t-(length:--border-width) px-4 max-md:h-20"
     />
   </div>
 </DocumentFragment>

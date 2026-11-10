@@ -8,7 +8,7 @@ exports[`NuclearJamLyricsTopBar > (Snapshot) renders the back button, title, and
   >
     <button
       aria-label="Back"
-      class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-primary border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none size-10 justify-center shrink-0"
+      class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-primary border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none size-10 justify-center max-md:size-12 max-md:[&_svg]:size-6 shrink-0"
       data-headlessui-state=""
       data-testid="jam-lyrics-back-button"
       type="button"

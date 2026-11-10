@@ -36,7 +36,7 @@ exports[`Plugin Store > (Snapshot) renders the plugin store with plugins from th
       >
         <button
           aria-label="Close"
-          class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 size-8 justify-center absolute top-3 right-3 z-10"
+          class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 size-8 justify-center max-md:size-11 max-md:[&_svg]:size-5 absolute top-3 right-3 z-10"
           data-headlessui-state=""
           data-testid="dialog-x-close"
           type="button"
@@ -92,7 +92,7 @@ exports[`Plugin Store > (Snapshot) renders the plugin store with plugins from th
                   App
                 </div>
                 <button
-                  class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 h-10 px-4 py-2 justify-start gap-2"
+                  class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 h-10 px-4 py-2 max-md:h-12 max-md:text-base justify-start gap-2"
                   data-headlessui-state=""
                   data-testid="settings-navigation-item-shortcuts"
                   type="button"
@@ -147,7 +147,7 @@ exports[`Plugin Store > (Snapshot) renders the plugin store with plugins from th
                   Key Shortcuts
                 </button>
                 <button
-                  class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-primary border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none h-10 px-4 py-2 justify-start gap-2"
+                  class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-primary border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none h-10 px-4 py-2 max-md:h-12 max-md:text-base justify-start gap-2"
                   data-headlessui-state=""
                   data-testid="settings-navigation-item-app-plugins"
                   type="button"
@@ -181,7 +181,7 @@ exports[`Plugin Store > (Snapshot) renders the plugin store with plugins from th
                   Plugins
                 </button>
                 <button
-                  class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 h-10 px-4 py-2 justify-start gap-2"
+                  class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 h-10 px-4 py-2 max-md:h-12 max-md:text-base justify-start gap-2"
                   data-headlessui-state=""
                   data-testid="settings-navigation-item-themes"
                   type="button"
@@ -232,7 +232,7 @@ exports[`Plugin Store > (Snapshot) renders the plugin store with plugins from th
                   Themes
                 </button>
                 <button
-                  class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 h-10 px-4 py-2 justify-start gap-2"
+                  class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 h-10 px-4 py-2 max-md:h-12 max-md:text-base justify-start gap-2"
                   data-headlessui-state=""
                   data-testid="settings-navigation-item-logs"
                   type="button"
@@ -268,7 +268,7 @@ exports[`Plugin Store > (Snapshot) renders the plugin store with plugins from th
                   Logs
                 </button>
                 <button
-                  class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 h-10 px-4 py-2 justify-start gap-2"
+                  class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 h-10 px-4 py-2 max-md:h-12 max-md:text-base justify-start gap-2"
                   data-headlessui-state=""
                   data-testid="settings-navigation-item-whats-new"
                   type="button"
@@ -317,7 +317,7 @@ exports[`Plugin Store > (Snapshot) renders the plugin store with plugins from th
                   >
                     <div>
                       <button
-                        class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 size-8 justify-center"
+                        class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 size-8 justify-center max-md:size-11 max-md:[&_svg]:size-5"
                         data-headlessui-state=""
                         type="button"
                       >
@@ -339,7 +339,7 @@ exports[`Plugin Store > (Snapshot) renders the plugin store with plugins from th
                     </div>
                     <div>
                       <button
-                        class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 size-8 justify-center"
+                        class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 size-8 justify-center max-md:size-11 max-md:[&_svg]:size-5"
                         data-headlessui-state=""
                         type="button"
                       >
@@ -361,7 +361,7 @@ exports[`Plugin Store > (Snapshot) renders the plugin store with plugins from th
                     </div>
                     <div>
                       <button
-                        class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 size-8 justify-center"
+                        class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 size-8 justify-center max-md:size-11 max-md:[&_svg]:size-5"
                         data-headlessui-state=""
                         type="button"
                       >
@@ -383,7 +383,7 @@ exports[`Plugin Store > (Snapshot) renders the plugin store with plugins from th
                     </div>
                     <div>
                       <button
-                        class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 size-8 justify-center"
+                        class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 size-8 justify-center max-md:size-11 max-md:[&_svg]:size-5"
                         data-headlessui-state=""
                         type="button"
                       >
@@ -449,7 +449,7 @@ exports[`Plugin Store > (Snapshot) renders the plugin store with plugins from th
                     <button
                       aria-controls="headlessui-tabs-panel-:rg:"
                       aria-selected="false"
-                      class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 h-10 px-4 py-2"
+                      class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 h-10 px-4 py-2 max-md:h-12 max-md:text-base"
                       data-headlessui-state=""
                       id="headlessui-tabs-tab-:rc:"
                       role="tab"
@@ -461,7 +461,7 @@ exports[`Plugin Store > (Snapshot) renders the plugin store with plugins from th
                     <button
                       aria-controls="headlessui-tabs-panel-:ri:"
                       aria-selected="true"
-                      class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-primary border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none h-10 px-4 py-2"
+                      class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-primary border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none h-10 px-4 py-2 max-md:h-12 max-md:text-base"
                       data-headlessui-state="hover"
                       data-hover=""
                       data-selected=""
@@ -659,7 +659,7 @@ exports[`Plugin Store > (Snapshot) renders the plugin store with plugins from th
                                       class="shrink-0"
                                     >
                                       <button
-                                        class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-primary border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none h-10 px-4 py-2 w-28"
+                                        class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-primary border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none h-10 px-4 py-2 max-md:h-12 max-md:text-base w-28"
                                         data-headlessui-state=""
                                         type="button"
                                       >
@@ -744,7 +744,7 @@ exports[`Plugin Store > (Snapshot) renders the plugin store with plugins from th
                                       class="shrink-0"
                                     >
                                       <button
-                                        class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-primary border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none h-10 px-4 py-2 w-28"
+                                        class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-primary border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none h-10 px-4 py-2 max-md:h-12 max-md:text-base w-28"
                                         data-headlessui-state=""
                                         type="button"
                                       >
@@ -829,7 +829,7 @@ exports[`Plugin Store > (Snapshot) renders the plugin store with plugins from th
                                       class="shrink-0"
                                     >
                                       <button
-                                        class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-primary border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none h-10 px-4 py-2 w-28"
+                                        class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-primary border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none h-10 px-4 py-2 max-md:h-12 max-md:text-base w-28"
                                         data-headlessui-state=""
                                         type="button"
                                       >

@@ -130,7 +130,7 @@ exports[`FavoriteTracks view > (Snapshot) renders with tracks 1`] = `
               >
                 <div>
                   <button
-                    class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-primary border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none size-10 justify-center"
+                    class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-primary border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none size-10 justify-center max-md:size-12 max-md:[&_svg]:size-6"
                     data-headlessui-state=""
                     data-testid="play-all-button"
                     type="button"
@@ -156,7 +156,7 @@ exports[`FavoriteTracks view > (Snapshot) renders with tracks 1`] = `
                 </div>
                 <div>
                   <button
-                    class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-muted border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none size-10 justify-center"
+                    class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-muted border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none size-10 justify-center max-md:size-12 max-md:[&_svg]:size-6"
                     data-headlessui-state=""
                     data-testid="add-all-to-queue-button"
                     type="button"
@@ -345,7 +345,7 @@ exports[`FavoriteTracks view > (Snapshot) renders with tracks 1`] = `
                         >
                           <button
                             aria-label="Remove from favorites"
-                            class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 size-8 justify-center"
+                            class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 size-8 justify-center max-md:size-11 max-md:[&_svg]:size-5"
                             data-headlessui-state=""
                             type="button"
                           >
@@ -406,7 +406,7 @@ exports[`FavoriteTracks view > (Snapshot) renders with tracks 1`] = `
                             >
                               <button
                                 aria-label="Add to queue"
-                                class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap outline-none disabled:cursor-not-allowed disabled:opacity-50 size-8 justify-center opacity-0 transition-none group-hover:opacity-100"
+                                class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap outline-none disabled:cursor-not-allowed disabled:opacity-50 size-8 justify-center max-md:size-11 max-md:[&_svg]:size-5 opacity-0 transition-none group-hover:opacity-100"
                                 data-headlessui-state=""
                                 data-testid="add-to-queue-button"
                                 type="button"
@@ -436,7 +436,7 @@ exports[`FavoriteTracks view > (Snapshot) renders with tracks 1`] = `
                                 aria-expanded="false"
                                 aria-haspopup="menu"
                                 aria-label="Track options"
-                                class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap outline-none disabled:cursor-not-allowed disabled:opacity-50 size-8 justify-center opacity-0 transition-none group-hover:opacity-100"
+                                class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap outline-none disabled:cursor-not-allowed disabled:opacity-50 size-8 justify-center max-md:size-11 max-md:[&_svg]:size-5 opacity-0 transition-none group-hover:opacity-100"
                                 data-headlessui-state=""
                                 data-state="closed"
                                 data-testid="track-context-menu-button"
@@ -492,7 +492,7 @@ exports[`FavoriteTracks view > (Snapshot) renders with tracks 1`] = `
                         >
                           <button
                             aria-label="Remove from favorites"
-                            class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 size-8 justify-center"
+                            class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 size-8 justify-center max-md:size-11 max-md:[&_svg]:size-5"
                             data-headlessui-state=""
                             type="button"
                           >
@@ -553,7 +553,7 @@ exports[`FavoriteTracks view > (Snapshot) renders with tracks 1`] = `
                             >
                               <button
                                 aria-label="Add to queue"
-                                class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap outline-none disabled:cursor-not-allowed disabled:opacity-50 size-8 justify-center opacity-0 transition-none group-hover:opacity-100"
+                                class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap outline-none disabled:cursor-not-allowed disabled:opacity-50 size-8 justify-center max-md:size-11 max-md:[&_svg]:size-5 opacity-0 transition-none group-hover:opacity-100"
                                 data-headlessui-state=""
                                 data-testid="add-to-queue-button"
                                 type="button"
@@ -583,7 +583,7 @@ exports[`FavoriteTracks view > (Snapshot) renders with tracks 1`] = `
                                 aria-expanded="false"
                                 aria-haspopup="menu"
                                 aria-label="Track options"
-                                class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap outline-none disabled:cursor-not-allowed disabled:opacity-50 size-8 justify-center opacity-0 transition-none group-hover:opacity-100"
+                                class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap outline-none disabled:cursor-not-allowed disabled:opacity-50 size-8 justify-center max-md:size-11 max-md:[&_svg]:size-5 opacity-0 transition-none group-hover:opacity-100"
                                 data-headlessui-state=""
                                 data-state="closed"
                                 data-testid="track-context-menu-button"

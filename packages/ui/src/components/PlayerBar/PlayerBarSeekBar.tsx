@@ -32,7 +32,7 @@ export const PlayerBarSeekBar: FC<PlayerSeekBarProps> = ({
       <div
         ref={containerRef}
         data-testid="player-seek-bar"
-        className={cn('relative h-4 w-full', {
+        className={cn('relative h-4 w-full max-md:h-6', {
           'pointer-events-none cursor-not-allowed': isLoading,
           'cursor-pointer': isInteractive,
         })}
@@ -47,7 +47,7 @@ export const PlayerBarSeekBar: FC<PlayerSeekBarProps> = ({
             },
           )}
         >
-          <div className="absolute right-0 left-0 z-10 flex h-full flex-row items-center justify-between px-2 pt-0.5 text-xs leading-none">
+          <div className="absolute right-0 left-0 z-10 flex h-full flex-row items-center justify-between px-2 pt-0.5 text-xs leading-none max-md:text-sm">
             <span className="tabular-nums">
               {formatTimeSeconds(elapsedSeconds)}
             </span>
