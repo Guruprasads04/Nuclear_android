@@ -15,7 +15,7 @@ env:
 
 jobs:
   lint:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout code
@@ -28,7 +28,7 @@ jobs:
         run: pnpm lint
 
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout code
@@ -60,7 +60,7 @@ jobs:
           fail_ci_if_error: false
 
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     env:
       CARGO_PROFILE_DEV_DEBUG: 0
 
