@@ -52,12 +52,15 @@ const PluginStoreItemBase: FC<PluginStoreItemProps> = ({
     <Box
       data-testid="plugin-store-item"
       variant="tertiary"
-      className={cn('flex-row items-center justify-between gap-4', className)}
+      className={cn(
+        'flex-row items-center justify-between gap-4 max-md:flex-col max-md:items-stretch max-md:gap-3',
+        className,
+      )}
       {...props}
     >
       <div className="flex min-w-0 flex-1 flex-col gap-1">
-        <div className="flex items-center gap-2">
-          <h3 className="text-foreground inline-flex flex-row items-baseline gap-2 text-lg leading-tight font-bold select-none">
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+          <h3 className="text-foreground inline-flex min-w-0 flex-row flex-wrap items-baseline gap-x-2 text-lg leading-tight font-bold select-none">
             <span data-testid="plugin-store-item-name">{name}</span>
             <p className="text-muted-foreground text-sm font-normal select-none">
               <span className="mr-1 opacity-60">{by}</span>
@@ -87,19 +90,22 @@ const PluginStoreItemBase: FC<PluginStoreItemProps> = ({
         </p>
       </div>
 
-      <div className="shrink-0">
+      <div className="shrink-0 max-md:w-full">
         {isInstalling ? (
-          <Button disabled className="w-28">
+          <Button disabled className="w-28 max-md:w-full max-md:justify-center">
             <Loader size="sm" />
             <span className="ml-2">{installing}</span>
           </Button>
         ) : isInstalled ? (
-          <Button disabled className="w-28">
+          <Button disabled className="w-28 max-md:w-full max-md:justify-center">
             <Check size={16} />
             <span className="ml-2">{installed}</span>
           </Button>
         ) : (
-          <Button onClick={onInstall} className="w-28">
+          <Button
+            onClick={onInstall}
+            className="w-28 max-md:w-full max-md:justify-center"
+          >
             <Download size={16} />
             <span className="ml-2">{install}</span>
           </Button>

@@ -2,17 +2,17 @@
 
 exports[`PluginStoreItem > (Snapshot) renders default state 1`] = `
 <div
-  class="border-border flex h-full w-full rounded-md border-(length:--border-width) p-4 surface-muted shadow-shadow flex-row items-center justify-between gap-4"
+  class="border-border flex h-full w-full rounded-md border-(length:--border-width) p-4 surface-muted shadow-shadow flex-row items-center justify-between gap-4 max-md:flex-col max-md:items-stretch max-md:gap-3"
   data-testid="plugin-store-item"
 >
   <div
     class="flex min-w-0 flex-1 flex-col gap-1"
   >
     <div
-      class="flex items-center gap-2"
+      class="flex flex-wrap items-center gap-x-2 gap-y-1"
     >
       <h3
-        class="text-foreground inline-flex flex-row items-baseline gap-2 text-lg leading-tight font-bold select-none"
+        class="text-foreground inline-flex min-w-0 flex-row flex-wrap items-baseline gap-x-2 text-lg leading-tight font-bold select-none"
       >
         <span
           data-testid="plugin-store-item-name"
@@ -53,10 +53,10 @@ exports[`PluginStoreItem > (Snapshot) renders default state 1`] = `
     </p>
   </div>
   <div
-    class="shrink-0"
+    class="shrink-0 max-md:w-full"
   >
     <button
-      class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-primary border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none h-10 px-4 py-2 max-md:h-12 max-md:text-base w-28"
+      class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-primary border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none h-10 px-4 py-2 max-md:h-12 max-md:text-base w-28 max-md:w-full max-md:justify-center"
       data-headlessui-state=""
       type="button"
     >
@@ -95,17 +95,17 @@ exports[`PluginStoreItem > (Snapshot) renders default state 1`] = `
 
 exports[`PluginStoreItem > (Snapshot) renders installed state 1`] = `
 <div
-  class="border-border flex h-full w-full rounded-md border-(length:--border-width) p-4 surface-muted shadow-shadow flex-row items-center justify-between gap-4"
+  class="border-border flex h-full w-full rounded-md border-(length:--border-width) p-4 surface-muted shadow-shadow flex-row items-center justify-between gap-4 max-md:flex-col max-md:items-stretch max-md:gap-3"
   data-testid="plugin-store-item"
 >
   <div
     class="flex min-w-0 flex-1 flex-col gap-1"
   >
     <div
-      class="flex items-center gap-2"
+      class="flex flex-wrap items-center gap-x-2 gap-y-1"
     >
       <h3
-        class="text-foreground inline-flex flex-row items-baseline gap-2 text-lg leading-tight font-bold select-none"
+        class="text-foreground inline-flex min-w-0 flex-row flex-wrap items-baseline gap-x-2 text-lg leading-tight font-bold select-none"
       >
         <span
           data-testid="plugin-store-item-name"
@@ -146,10 +146,10 @@ exports[`PluginStoreItem > (Snapshot) renders installed state 1`] = `
     </p>
   </div>
   <div
-    class="shrink-0"
+    class="shrink-0 max-md:w-full"
   >
     <button
-      class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-primary border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none h-10 px-4 py-2 max-md:h-12 max-md:text-base w-28"
+      class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-primary border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none h-10 px-4 py-2 max-md:h-12 max-md:text-base w-28 max-md:w-full max-md:justify-center"
       data-disabled=""
       data-headlessui-state="disabled"
       disabled=""
@@ -184,17 +184,17 @@ exports[`PluginStoreItem > (Snapshot) renders installed state 1`] = `
 
 exports[`PluginStoreItem > (Snapshot) renders installing state 1`] = `
 <div
-  class="border-border flex h-full w-full rounded-md border-(length:--border-width) p-4 surface-muted shadow-shadow flex-row items-center justify-between gap-4"
+  class="border-border flex h-full w-full rounded-md border-(length:--border-width) p-4 surface-muted shadow-shadow flex-row items-center justify-between gap-4 max-md:flex-col max-md:items-stretch max-md:gap-3"
   data-testid="plugin-store-item"
 >
   <div
     class="flex min-w-0 flex-1 flex-col gap-1"
   >
     <div
-      class="flex items-center gap-2"
+      class="flex flex-wrap items-center gap-x-2 gap-y-1"
     >
       <h3
-        class="text-foreground inline-flex flex-row items-baseline gap-2 text-lg leading-tight font-bold select-none"
+        class="text-foreground inline-flex min-w-0 flex-row flex-wrap items-baseline gap-x-2 text-lg leading-tight font-bold select-none"
       >
         <span
           data-testid="plugin-store-item-name"
@@ -235,10 +235,10 @@ exports[`PluginStoreItem > (Snapshot) renders installing state 1`] = `
     </p>
   </div>
   <div
-    class="shrink-0"
+    class="shrink-0 max-md:w-full"
   >
     <button
-      class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-primary border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none h-10 px-4 py-2 max-md:h-12 max-md:text-base w-28"
+      class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-primary border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none h-10 px-4 py-2 max-md:h-12 max-md:text-base w-28 max-md:w-full max-md:justify-center"
       data-disabled=""
       data-headlessui-state="disabled"
       disabled=""
@@ -285,17 +285,17 @@ exports[`PluginStoreItem > (Snapshot) renders installing state 1`] = `
 
 exports[`PluginStoreItem > (Snapshot) renders with custom labels 1`] = `
 <div
-  class="border-border flex h-full w-full rounded-md border-(length:--border-width) p-4 surface-muted shadow-shadow flex-row items-center justify-between gap-4"
+  class="border-border flex h-full w-full rounded-md border-(length:--border-width) p-4 surface-muted shadow-shadow flex-row items-center justify-between gap-4 max-md:flex-col max-md:items-stretch max-md:gap-3"
   data-testid="plugin-store-item"
 >
   <div
     class="flex min-w-0 flex-1 flex-col gap-1"
   >
     <div
-      class="flex items-center gap-2"
+      class="flex flex-wrap items-center gap-x-2 gap-y-1"
     >
       <h3
-        class="text-foreground inline-flex flex-row items-baseline gap-2 text-lg leading-tight font-bold select-none"
+        class="text-foreground inline-flex min-w-0 flex-row flex-wrap items-baseline gap-x-2 text-lg leading-tight font-bold select-none"
       >
         <span
           data-testid="plugin-store-item-name"
@@ -336,10 +336,10 @@ exports[`PluginStoreItem > (Snapshot) renders with custom labels 1`] = `
     </p>
   </div>
   <div
-    class="shrink-0"
+    class="shrink-0 max-md:w-full"
   >
     <button
-      class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-primary border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none h-10 px-4 py-2 max-md:h-12 max-md:text-base w-28"
+      class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-primary border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none h-10 px-4 py-2 max-md:h-12 max-md:text-base w-28 max-md:w-full max-md:justify-center"
       data-headlessui-state=""
       type="button"
     >
@@ -378,17 +378,17 @@ exports[`PluginStoreItem > (Snapshot) renders with custom labels 1`] = `
 
 exports[`PluginStoreItem > (Snapshot) renders with long description 1`] = `
 <div
-  class="border-border flex h-full w-full rounded-md border-(length:--border-width) p-4 surface-muted shadow-shadow flex-row items-center justify-between gap-4"
+  class="border-border flex h-full w-full rounded-md border-(length:--border-width) p-4 surface-muted shadow-shadow flex-row items-center justify-between gap-4 max-md:flex-col max-md:items-stretch max-md:gap-3"
   data-testid="plugin-store-item"
 >
   <div
     class="flex min-w-0 flex-1 flex-col gap-1"
   >
     <div
-      class="flex items-center gap-2"
+      class="flex flex-wrap items-center gap-x-2 gap-y-1"
     >
       <h3
-        class="text-foreground inline-flex flex-row items-baseline gap-2 text-lg leading-tight font-bold select-none"
+        class="text-foreground inline-flex min-w-0 flex-row flex-wrap items-baseline gap-x-2 text-lg leading-tight font-bold select-none"
       >
         <span
           data-testid="plugin-store-item-name"
@@ -429,10 +429,10 @@ exports[`PluginStoreItem > (Snapshot) renders with long description 1`] = `
     </p>
   </div>
   <div
-    class="shrink-0"
+    class="shrink-0 max-md:w-full"
   >
     <button
-      class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-primary border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none h-10 px-4 py-2 max-md:h-12 max-md:text-base w-28"
+      class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-primary border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none h-10 px-4 py-2 max-md:h-12 max-md:text-base w-28 max-md:w-full max-md:justify-center"
       data-headlessui-state=""
       type="button"
     >
