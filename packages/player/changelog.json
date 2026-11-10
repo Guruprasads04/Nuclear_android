@@ -1,7 +1,7 @@
 [
   {
     "date": "2026-11-03T00:00",
-    "description": "Nuclear adapts to phone-sized screens: the navigation and queue open as slide-over drawers, and the top bar, player bar and preferences fit narrow screens.",
+    "description": "Nuclear adapts to phone-sized screens: the navigation and queue open as slide-over drawers, and the top bar, player bar and preferences fit narrow screens. On Android the app stays clear of the status bar, navigation bar and keyboard.",
     "type": "feature",
     "contributors": ["Guruprasads04"],
     "tags": [

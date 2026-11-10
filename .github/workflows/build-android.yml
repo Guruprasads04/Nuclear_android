@@ -79,10 +79,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Initialise Tauri Android project
-        working-directory: packages/player
-        run: pnpm tauri android init --ci
-
       - name: Build APK
         working-directory: packages/player
         run: pnpm tauri android build --apk --target aarch64 --ci
