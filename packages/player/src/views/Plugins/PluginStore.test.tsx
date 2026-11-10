@@ -155,6 +155,33 @@ describe('Plugin Store', () => {
     expect(installedPlugins[0].name).toBe('YouTube Music');
   });
 
+  it('keeps showing every plugin that is still installing', async () => {
+    const secondPlugin = {
+      ...fakeInstallableYouTubePlugin,
+      id: 'second-plugin',
+      name: 'Second Plugin',
+    };
+    setupRegistryMock([fakeInstallableYouTubePlugin, secondPlugin]);
+    mockIPC((cmd) => {
+      if (cmd === 'download_file') {
+        return new Promise(() => {});
+      }
+    });
+    PluginFsMock.setExists(true);
+    PluginFsMock.setMkdir(undefined);
+
+    await PluginsWrapper.mount();
+    await PluginsWrapper.goToStoreTab();
+    await screen.findAllByTestId('plugin-store-item');
+
+    await PluginsWrapper.getStorePlugins()[0].install();
+    await PluginsWrapper.getStorePlugins()[1].install();
+
+    const [first, second] = PluginsWrapper.getStorePlugins();
+    expect(first.isInstalling).toBe(true);
+    expect(second.isInstalling).toBe(true);
+  });
+
   it('does not install a plugin whose registry entry has no sha256', async () => {
     setupRegistryMock([omit(fakeInstallableYouTubePlugin, 'sha256')]);
 

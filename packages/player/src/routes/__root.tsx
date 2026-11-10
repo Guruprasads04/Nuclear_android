@@ -174,7 +174,7 @@ const RootComponent = () => {
       </SoundProvider>
 
       <ConnectedPlayerBar />
-      <Toaster />
+      <Toaster position={isMobile ? 'top-center' : 'bottom-right'} />
       <ConnectedSettingsModal />
       <DevTools />
     </PlayerShell>

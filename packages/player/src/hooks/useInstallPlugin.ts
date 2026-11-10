@@ -1,4 +1,4 @@
-import { useMutation } from '@tanstack/react-query';
+import { useMutation, useMutationState } from '@tanstack/react-query';
 import { toast } from 'sonner';
 
 import { useTranslation } from '@nuclearplayer/i18n';
@@ -16,12 +16,22 @@ type InstallPluginParams = {
   plugin: MarketplacePlugin;
 };
 
+const INSTALL_PLUGIN_MUTATION_KEY = ['installPlugin'];
+
+export const useInstallingPluginIds = (): string[] =>
+  useMutationState({
+    filters: { mutationKey: INSTALL_PLUGIN_MUTATION_KEY, status: 'pending' },
+    select: (mutation) =>
+      (mutation.state.variables as InstallPluginParams).plugin.id,
+  });
+
 export const useInstallPlugin = () => {
   const { t } = useTranslation('plugins');
   const loadPluginFromPath = usePluginStore((s) => s.loadPluginFromPath);
   const enablePlugin = usePluginStore((s) => s.enablePlugin);
 
   return useMutation({
+    mutationKey: INSTALL_PLUGIN_MUTATION_KEY,
     mutationFn: async ({ plugin }: InstallPluginParams) => {
       const { version, downloadUrl, sha256 } = plugin;
       if (!version || !downloadUrl || !sha256) {

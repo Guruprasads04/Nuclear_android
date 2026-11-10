@@ -12,7 +12,10 @@ import {
 } from '@nuclearplayer/ui';
 
 import { MarketplacePlugin } from '../../apis/pluginMarketplaceApi';
-import { useInstallPlugin } from '../../hooks/useInstallPlugin';
+import {
+  useInstallingPluginIds,
+  useInstallPlugin,
+} from '../../hooks/useInstallPlugin';
 import { useMarketplacePlugins } from '../../hooks/useMarketplacePlugins';
 import { usePluginStore } from '../../stores/pluginStore';
 import { PluginStoreSkeletonList } from './PluginStoreSkeletonList';
@@ -34,7 +37,8 @@ const CATEGORIES = [
 export const PluginStore: FC = () => {
   const { t } = useTranslation('plugins');
   const { data: plugins, isLoading, error, refetch } = useMarketplacePlugins();
-  const { mutate: installPlugin, isPending, variables } = useInstallPlugin();
+  const { mutate: installPlugin } = useInstallPlugin();
+  const installingPluginIds = useInstallingPluginIds();
   const installedPlugins = usePluginStore((s) => s.plugins);
 
   const [search, setSearch] = useState('');
@@ -78,7 +82,7 @@ export const PluginStore: FC = () => {
     plugin.id in installedPlugins;
 
   const isPluginInstalling = (plugin: MarketplacePlugin) =>
-    isPending && variables?.plugin.id === plugin.id;
+    installingPluginIds.includes(plugin.id);
 
   if (error) {
     return (
