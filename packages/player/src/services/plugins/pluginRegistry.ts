@@ -6,7 +6,7 @@ const REGISTRY_FILE = 'plugins.json';
 const PREFIX = 'plugins.';
 const store = new LazyStore(REGISTRY_FILE);
 
-export type PluginInstallationMethod = 'dev' | 'store';
+export type PluginInstallationMethod = 'dev' | 'store' | 'bundled';
 
 export type PluginRegistryEntry = {
   id: string;

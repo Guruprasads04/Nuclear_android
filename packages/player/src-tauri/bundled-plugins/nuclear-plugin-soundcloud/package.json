@@ -1,0 +1,63 @@
+{
+  "name": "nuclear-plugin-soundcloud",
+  "version": "0.3.0",
+  "description": "SoundCloud metadata and streaming provider for Nuclear music player",
+  "author": "nukeop",
+  "license": "AGPL-3.0-only",
+  "main": "index.js",
+  "type": "module",
+  "nuclear": {
+    "displayName": "SoundCloud",
+    "category": "streaming",
+    "categories": [
+      "metadata",
+      "streaming",
+      "playlists"
+    ],
+    "icon": {
+      "type": "link",
+      "link": "https://a-v2.sndcdn.com/assets/images/sc-icons/favicon-2cadd14bdb.ico"
+    },
+    "permissions": []
+  },
+  "keywords": [
+    "nuclear",
+    "plugin",
+    "soundcloud",
+    "metadata",
+    "streaming"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NuclearPlayer/nuclear-plugin-soundcloud.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NuclearPlayer/nuclear-plugin-soundcloud/issues"
+  },
+  "scripts": {
+    "lint": "eslint 'src/**/*.ts' eslint.config.ts",
+    "lint:fix": "eslint 'src/**/*.ts' eslint.config.ts --fix",
+    "format": "prettier --write 'src/**/*.ts'",
+    "format:check": "prettier --check 'src/**/*.ts'"
+  },
+  "files": [
+    "src",
+    "README.md"
+  ],
+  "dependencies": {
+    "@nuclearplayer/plugin-sdk": "^2.0.0"
+  },
+  "packageManager": "pnpm@10.16.1",
+  "devDependencies": {
+    "@eslint/js": "^10.0.0",
+    "@ianvs/prettier-plugin-sort-imports": "^4.7.1",
+    "eslint": "10.0.0-rc.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.5",
+    "globals": "^17.3.0",
+    "jiti": "^2.6.1",
+    "prettier": "^3.8.1",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "8.54.1-alpha.5"
+  }
+}

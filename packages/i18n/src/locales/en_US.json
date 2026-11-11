@@ -306,7 +306,8 @@
       },
       "installError": {
         "title": "Failed to install {{name}}",
-        "unverifiedRelease": "The plugin registry has no verified release for this plugin."
+        "unverifiedRelease": "The plugin registry has no verified release for this plugin.",
+        "timedOut": "The download took too long and was stopped. Check your connection and try again."
       }
     }
   },

@@ -91,3 +91,7 @@ jobs:
         run: pnpm --filter @nuclearplayer/player tauri build --debug --no-bundle
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
+      - name: Test Rust backend
+        working-directory: packages/player/src-tauri
+        run: cargo test

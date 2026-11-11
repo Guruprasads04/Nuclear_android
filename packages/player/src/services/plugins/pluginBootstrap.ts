@@ -4,6 +4,7 @@ import { usePluginStore } from '../../stores/pluginStore';
 import { useStartupStore } from '../../stores/startupStore';
 import { errorMessage } from '../../utils/errorMessage';
 import { providersHost } from '../providersHost';
+import { installBundledPlugins } from './bundledPlugins';
 import { createPluginAPI } from './createPluginAPI';
 import { checkAndUpdatePlugins } from './pluginAutoUpdate';
 import { getPluginsDir } from './pluginDir';
@@ -23,6 +24,7 @@ const isManagedPath = async (absPath: string): Promise<boolean> => {
 export const hydratePluginsFromRegistry = async (): Promise<void> => {
   useStartupStore.getState().startStartup();
   const now = Date.now();
+  await installBundledPlugins();
   const entries = (await listRegistryEntries()).sort(
     (a, b) =>
       new Date(a.installedAt).getTime() - new Date(b.installedAt).getTime(),

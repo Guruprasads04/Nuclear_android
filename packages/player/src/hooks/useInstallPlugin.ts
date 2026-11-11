@@ -11,12 +11,14 @@ import {
 import { upsertRegistryEntry } from '../services/plugins/pluginRegistry';
 import { usePluginStore } from '../stores/pluginStore';
 import { errorMessage } from '../utils/errorMessage';
+import { withTimeout } from '../utils/withTimeout';
 
 type InstallPluginParams = {
   plugin: MarketplacePlugin;
 };
 
 const INSTALL_PLUGIN_MUTATION_KEY = ['installPlugin'];
+const INSTALL_TIMEOUT_MS = 90_000;
 
 export const useInstallingPluginIds = (): string[] =>
   useMutationState({
@@ -38,11 +40,15 @@ export const useInstallPlugin = () => {
         throw new Error(t('store.installError.unverifiedRelease'));
       }
 
-      const extractedPath = await downloadAndExtractPlugin({
-        pluginId: plugin.id,
-        downloadUrl,
-        sha256,
-      });
+      const extractedPath = await withTimeout(
+        downloadAndExtractPlugin({
+          pluginId: plugin.id,
+          downloadUrl,
+          sha256,
+        }),
+        INSTALL_TIMEOUT_MS,
+        t('store.installError.timedOut'),
+      );
 
       try {
         const now = new Date().toISOString();

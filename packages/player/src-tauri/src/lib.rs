@@ -1,4 +1,5 @@
 pub mod bridge;
+pub mod bundled_plugins;
 pub mod commands;
 pub mod db;
 pub mod discord;
@@ -42,6 +43,8 @@ fn specta_builder() -> tauri_specta::Builder<tauri::Wry> {
         commands::extract_zip,
         commands::download_file,
         commands::sha256_file,
+        bundled_plugins::list_bundled_plugins,
+        bundled_plugins::install_bundled_plugin,
         http::http_fetch,
         ytdlp::ytdlp_search,
         ytdlp::ytdlp_get_stream,
