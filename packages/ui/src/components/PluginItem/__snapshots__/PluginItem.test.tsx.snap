@@ -3,7 +3,7 @@
 exports[`PluginItem > (Snapshot) renders disabled state 1`] = `
 <DocumentFragment>
   <div
-    class="flex flex-row gap-2"
+    class="flex flex-row gap-2 max-md:flex-col"
   >
     <div
       aria-busy="false"
@@ -51,7 +51,7 @@ exports[`PluginItem > (Snapshot) renders disabled state 1`] = `
             class="min-w-0 flex-1"
           >
             <h3
-              class="text-foreground inline-flex flex-row items-baseline gap-2 text-lg leading-tight font-bold select-none"
+              class="text-foreground inline-flex flex-row flex-wrap items-baseline gap-x-2 text-lg leading-tight font-bold select-none"
             >
               <span
                 data-testid="plugin-name"
@@ -81,7 +81,7 @@ exports[`PluginItem > (Snapshot) renders disabled state 1`] = `
             </p>
           </div>
           <div
-            class="flex h-full shrink-0 flex-col items-end justify-between sm:w-auto sm:items-end"
+            class="flex h-full shrink-0 flex-col items-end justify-between max-md:order-last max-md:w-full max-md:flex-row max-md:items-center max-md:justify-between sm:w-auto sm:items-end"
           >
             <span
               class="text-muted-foreground flex flex-row items-baseline gap-2 text-sm font-normal"
@@ -92,7 +92,7 @@ exports[`PluginItem > (Snapshot) renders disabled state 1`] = `
       </div>
     </div>
     <div
-      class="flex flex-col justify-between gap-2"
+      class="flex flex-col justify-between gap-2 max-md:flex-row max-md:justify-end"
     />
   </div>
 </DocumentFragment>
@@ -101,7 +101,7 @@ exports[`PluginItem > (Snapshot) renders disabled state 1`] = `
 exports[`PluginItem > (Snapshot) renders rightAccessory content 1`] = `
 <DocumentFragment>
   <div
-    class="flex flex-row gap-2"
+    class="flex flex-row gap-2 max-md:flex-col"
   >
     <div
       aria-busy="false"
@@ -118,7 +118,7 @@ exports[`PluginItem > (Snapshot) renders rightAccessory content 1`] = `
             class="min-w-0 flex-1"
           >
             <h3
-              class="text-foreground inline-flex flex-row items-baseline gap-2 text-lg leading-tight font-bold select-none"
+              class="text-foreground inline-flex flex-row flex-wrap items-baseline gap-x-2 text-lg leading-tight font-bold select-none"
             >
               <span
                 data-testid="plugin-name"
@@ -148,7 +148,7 @@ exports[`PluginItem > (Snapshot) renders rightAccessory content 1`] = `
             </p>
           </div>
           <div
-            class="flex h-full shrink-0 flex-col items-end justify-between sm:w-auto sm:items-end"
+            class="flex h-full shrink-0 flex-col items-end justify-between max-md:order-last max-md:w-full max-md:flex-row max-md:items-center max-md:justify-between sm:w-auto sm:items-end"
           >
             <div
               class=""
@@ -166,7 +166,7 @@ exports[`PluginItem > (Snapshot) renders rightAccessory content 1`] = `
       </div>
     </div>
     <div
-      class="flex flex-col justify-between gap-2"
+      class="flex flex-col justify-between gap-2 max-md:flex-row max-md:justify-end"
     />
   </div>
 </DocumentFragment>
@@ -175,7 +175,7 @@ exports[`PluginItem > (Snapshot) renders rightAccessory content 1`] = `
 exports[`PluginItem > (Snapshot) renders with all props 1`] = `
 <DocumentFragment>
   <div
-    class="flex flex-row gap-2"
+    class="flex flex-row gap-2 max-md:flex-col"
   >
     <div
       aria-busy="false"
@@ -223,7 +223,7 @@ exports[`PluginItem > (Snapshot) renders with all props 1`] = `
             class="min-w-0 flex-1"
           >
             <h3
-              class="text-foreground inline-flex flex-row items-baseline gap-2 text-lg leading-tight font-bold select-none"
+              class="text-foreground inline-flex flex-row flex-wrap items-baseline gap-x-2 text-lg leading-tight font-bold select-none"
             >
               <span
                 data-testid="plugin-name"
@@ -253,7 +253,7 @@ exports[`PluginItem > (Snapshot) renders with all props 1`] = `
             </p>
           </div>
           <div
-            class="flex h-full shrink-0 flex-col items-end justify-between sm:w-auto sm:items-end"
+            class="flex h-full shrink-0 flex-col items-end justify-between max-md:order-last max-md:w-full max-md:flex-row max-md:items-center max-md:justify-between sm:w-auto sm:items-end"
           >
             <span
               class="text-muted-foreground flex flex-row items-baseline gap-2 text-sm font-normal"
@@ -298,7 +298,7 @@ exports[`PluginItem > (Snapshot) renders with all props 1`] = `
       </div>
     </div>
     <div
-      class="flex flex-col justify-between gap-2"
+      class="flex flex-col justify-between gap-2 max-md:flex-row max-md:justify-end"
     >
       <button
         class="inline-flex cursor-pointer items-center rounded-md whitespace-nowrap transition-all outline-none disabled:cursor-not-allowed disabled:opacity-50 surface-primary border-border shadow-shadow hover:translate-x-shadow-x hover:translate-y-shadow-y border-(length:--border-width) hover:shadow-none size-8 justify-center max-md:size-11 max-md:[&_svg]:size-5"

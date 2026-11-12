@@ -58,7 +58,7 @@ export const PluginItem: FC<PluginItemProps> = ({
   isLoading = false,
   labels = {},
 }) => (
-  <div className="flex flex-row gap-2">
+  <div className="flex flex-row gap-2 max-md:flex-col">
     <Box
       data-testid="plugin-item"
       variant={warning ? 'warning' : 'tertiary'}
@@ -85,7 +85,7 @@ export const PluginItem: FC<PluginItemProps> = ({
           )}
 
           <div className="min-w-0 flex-1">
-            <h3 className="text-foreground inline-flex flex-row items-baseline gap-2 text-lg leading-tight font-bold select-none">
+            <h3 className="text-foreground inline-flex flex-row flex-wrap items-baseline gap-x-2 text-lg leading-tight font-bold select-none">
               <span data-testid="plugin-name">{name}</span>
               <p className="text-muted-foreground text-sm font-normal select-none">
                 <span className="mr-1 opacity-60">{labels.by ?? 'by'}</span>
@@ -100,7 +100,7 @@ export const PluginItem: FC<PluginItemProps> = ({
             </p>
           </div>
 
-          <div className="flex h-full shrink-0 flex-col items-end justify-between sm:w-auto sm:items-end">
+          <div className="flex h-full shrink-0 flex-col items-end justify-between max-md:order-last max-md:w-full max-md:flex-row max-md:items-center max-md:justify-between sm:w-auto sm:items-end">
             {rightAccessory && (
               <div className={cn({ 'pointer-events-none': isLoading })}>
                 {rightAccessory}
@@ -149,7 +149,7 @@ export const PluginItem: FC<PluginItemProps> = ({
         </Box>
       )}
     </Box>
-    <div className="flex flex-col justify-between gap-2">
+    <div className="flex flex-col justify-between gap-2 max-md:flex-row max-md:justify-end">
       {onViewDetails && (
         <Button
           data-testid="plugin-action-view-details"
