@@ -2,7 +2,7 @@ import { invoke } from '@tauri-apps/api/core';
 
 import { errorMessage } from '../../utils/errorMessage';
 import { Logger } from '../logger';
-import { getManagedPluginPath } from './pluginDir';
+import { getManagedPluginAbsolutePath } from './pluginDir';
 import { getRegistryEntry, upsertRegistryEntry } from './pluginRegistry';
 
 type BundledPlugin = {
@@ -16,7 +16,10 @@ const installBundledPlugin = async (plugin: BundledPlugin): Promise<void> => {
     return;
   }
 
-  const destination = await getManagedPluginPath(plugin.id, plugin.version);
+  const destination = await getManagedPluginAbsolutePath(
+    plugin.id,
+    plugin.version,
+  );
   await invoke('install_bundled_plugin', { id: plugin.id, destination });
 
   const now = new Date().toISOString();
