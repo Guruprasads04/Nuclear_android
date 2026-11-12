@@ -64,7 +64,7 @@ jobs:
       - name: Setup Rust
         uses: dtolnay/rust-toolchain@stable
         with:
-          targets: aarch64-linux-android
+          targets: aarch64-linux-android,x86_64-linux-android
 
       - name: Cache cargo dependencies
         uses: actions/cache@v6
@@ -81,15 +81,15 @@ jobs:
 
       - name: Build APK
         working-directory: packages/player
-        run: pnpm tauri android build --apk --target aarch64 --ci
+        run: pnpm tauri android build --apk --target aarch64 --target x86_64 --ci
 
       - name: Sign APK
         env:
           ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
           ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
         run: |
-          UNSIGNED=$(find packages/player/src-tauri/gen/android/app/build/outputs/apk -name '*-unsigned.apk' | head -n 1)
-          if [ -z "$UNSIGNED" ]; then
+          mapfile -t UNSIGNED < <(find packages/player/src-tauri/gen/android/app/build/outputs/apk -name '*-unsigned.apk' | sort)
+          if [ ${#UNSIGNED[@]} -eq 0 ]; then
             echo "No unsigned APK found"
             find packages/player/src-tauri/gen/android/app/build/outputs -name '*.apk'
             exit 1
@@ -107,14 +107,31 @@ jobs:
           fi
 
           BUILD_TOOLS="${ANDROID_HOME}/build-tools/36.0.0"
-          "$BUILD_TOOLS/zipalign" -f -p 4 "$UNSIGNED" aligned.apk
-          "$BUILD_TOOLS/apksigner" sign --ks release.keystore --ks-pass "pass:$KEYSTORE_PASSWORD" \
-            --out nuclear-android-arm64.apk aligned.apk
-          rm -f release.keystore aligned.apk
+          mkdir -p apks
+          for apk in "${UNSIGNED[@]}"; do
+            case "$apk" in
+              *arm64*) name=nuclear-android-arm64.apk ;;
+              *x86_64*) name=nuclear-android-x86_64.apk ;;
+              *) name=$(basename "$apk" -unsigned.apk).apk ;;
+            esac
+            "$BUILD_TOOLS/zipalign" -f -p 4 "$apk" aligned.apk
+            "$BUILD_TOOLS/apksigner" sign --ks release.keystore --ks-pass "pass:$KEYSTORE_PASSWORD" \
+              --out "apks/$name" aligned.apk
+            echo "Signed apks/$name"
+            rm -f aligned.apk
+          done
+          rm -f release.keystore
 
       - name: Upload APK
         uses: actions/upload-artifact@v7
         with:
           name: nuclear-android-arm64
           if-no-files-found: error
-          path: nuclear-android-arm64.apk
+          path: apks/nuclear-android-arm64.apk
+
+      - name: Upload emulator APK
+        uses: actions/upload-artifact@v7
+        with:
+          name: nuclear-android-x86_64
+          if-no-files-found: error
+          path: apks/nuclear-android-x86_64.apk
