@@ -46,6 +46,10 @@ export const installBundledPlugins = async (): Promise<void> => {
     return;
   }
 
+  if (!Array.isArray(bundled)) {
+    return;
+  }
+
   for (const plugin of bundled) {
     try {
       await installBundledPlugin(plugin);

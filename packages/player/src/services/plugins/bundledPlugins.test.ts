@@ -98,4 +98,11 @@ describe('installBundledPlugins', () => {
 
     await expect(installBundledPlugins()).resolves.toBeUndefined();
   });
+
+  it('does not throw when the backend answers with nothing', async () => {
+    const calls = mockBackend(undefined);
+
+    await expect(installBundledPlugins()).resolves.toBeUndefined();
+    expect(calls).toHaveLength(0);
+  });
 });
