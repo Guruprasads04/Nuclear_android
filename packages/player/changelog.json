@@ -1,5 +1,17 @@
 [
   {
+    "date": "2026-11-12T00:00",
+    "description": "Installing plugins works on Android again. Plugin folders were resolved relative to the working directory, which is read-only on Android, so every install failed to write its files.",
+    "type": "fix",
+    "contributors": ["Guruprasads04"],
+    "tags": [
+      {
+        "label": "Plugins",
+        "color": "purple"
+      }
+    ]
+  },
+  {
     "date": "2026-11-11T00:00",
     "description": "Nuclear now ships with the SoundCloud plugin built in, so a fresh install has a working streaming source without downloading anything first. Plugin store downloads also stop with an error instead of hanging forever.",
     "type": "feature",

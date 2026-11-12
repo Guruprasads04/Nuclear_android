@@ -15,7 +15,8 @@ export const getPluginsDir = async (): Promise<string> => {
 };
 
 export const ensurePluginsDir = async (): Promise<string> => {
-  return ensureDir(PLUGINS_DIR_NAME);
+  await ensureDir(PLUGINS_DIR_NAME);
+  return getPluginsDir();
 };
 
 export const getManagedPluginPath = async (
