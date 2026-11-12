@@ -89,6 +89,7 @@ jobs:
           ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
         run: |
           mapfile -t UNSIGNED < <(find packages/player/src-tauri/gen/android/app/build/outputs/apk -name '*-unsigned.apk' | sort)
+          echo "Unsigned APKs found: ${UNSIGNED[*]:-none}"
           if [ ${#UNSIGNED[@]} -eq 0 ]; then
             echo "No unsigned APK found"
             find packages/player/src-tauri/gen/android/app/build/outputs -name '*.apk'
@@ -110,9 +111,10 @@ jobs:
           mkdir -p apks
           for apk in "${UNSIGNED[@]}"; do
             case "$apk" in
+              *universal*) name=nuclear-android-universal.apk ;;
               *arm64*) name=nuclear-android-arm64.apk ;;
               *x86_64*) name=nuclear-android-x86_64.apk ;;
-              *) name=$(basename "$apk" -unsigned.apk).apk ;;
+              *) name=nuclear-android-$(basename "$apk" -unsigned.apk).apk ;;
             esac
             "$BUILD_TOOLS/zipalign" -f -p 4 "$apk" aligned.apk
             "$BUILD_TOOLS/apksigner" sign --ks release.keystore --ks-pass "pass:$KEYSTORE_PASSWORD" \
@@ -122,16 +124,9 @@ jobs:
           done
           rm -f release.keystore
 
-      - name: Upload APK
+      - name: Upload APKs
         uses: actions/upload-artifact@v7
         with:
           name: nuclear-android-arm64
           if-no-files-found: error
-          path: apks/nuclear-android-arm64.apk
-
-      - name: Upload emulator APK
-        uses: actions/upload-artifact@v7
-        with:
-          name: nuclear-android-x86_64
-          if-no-files-found: error
-          path: apks/nuclear-android-x86_64.apk
+          path: apks/*.apk
