@@ -14,6 +14,7 @@ pub mod pagination;
 pub mod profile;
 mod setup;
 pub mod stream_server;
+pub mod tls;
 pub mod ytdlp;
 pub mod ytdlp_setup;
 

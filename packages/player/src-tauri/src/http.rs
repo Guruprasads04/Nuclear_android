@@ -1,10 +1,14 @@
 use log::{debug, error, warn};
 use percent_encoding::percent_decode_str;
-use reqwest::{header::HeaderMap, header::HeaderName, header::HeaderValue, Client, Method};
+use reqwest::{header::HeaderMap, header::HeaderName, header::HeaderValue, Method};
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::str::FromStr;
+use std::time::Duration;
 use tauri::command;
+
+const CONNECT_TIMEOUT: Duration = Duration::from_secs(15);
+const REQUEST_TIMEOUT: Duration = Duration::from_secs(30);
 
 const REDACTED_HEADERS: &[&str] = &[
     "authorization",
@@ -109,7 +113,9 @@ pub struct HttpResponse {
 #[command]
 #[specta::specta]
 pub async fn http_fetch(request: HttpRequest) -> Result<HttpResponse, String> {
-    let client = Client::builder()
+    let client = crate::tls::client_builder()
+        .connect_timeout(CONNECT_TIMEOUT)
+        .timeout(REQUEST_TIMEOUT)
         .build()
         .map_err(|e| format!("Failed to create HTTP client: {}", e))?;
 

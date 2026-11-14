@@ -1,5 +1,17 @@
 [
   {
+    "date": "2026-11-14T00:00",
+    "description": "Searches and downloads no longer hang forever: requests now time out, and on Android they trust the certificates the device trusts, so they work on networks that inspect traffic.",
+    "type": "fix",
+    "contributors": ["Guruprasads04"],
+    "tags": [
+      {
+        "label": "Streaming",
+        "color": "orange"
+      }
+    ]
+  },
+  {
     "date": "2026-11-12T00:00",
     "description": "Installing plugins works on Android again. Plugin folders were resolved relative to the working directory, which is read-only on Android, so every install failed to write its files.",
     "type": "fix",
