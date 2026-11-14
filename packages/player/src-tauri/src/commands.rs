@@ -120,7 +120,7 @@ pub async fn download_file(url: String, dest_path: PathBuf) -> Result<(), String
     async fn inner(url: &str, dest_path: &Path) -> Result<(), Box<dyn std::error::Error>> {
         log::info!("Downloading {} to {:?}", url, dest_path);
 
-        let client = crate::tls::client_builder()
+        let client = reqwest::Client::builder()
             .timeout(Duration::from_secs(300))
             .connect_timeout(Duration::from_secs(30))
             .build()?;

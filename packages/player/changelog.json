@@ -1,7 +1,7 @@
 [
   {
     "date": "2026-11-14T00:00",
-    "description": "Searches and downloads no longer hang forever: requests now time out, and on Android they trust the certificates the device trusts, so they work on networks that inspect traffic.",
+    "description": "Plugin searches and downloads no longer hang forever. Requests had no timeout, so a stalled connection left the screen loading with no error.",
     "type": "fix",
     "contributors": ["Guruprasads04"],
     "tags": [
